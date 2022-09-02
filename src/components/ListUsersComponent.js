@@ -7,22 +7,16 @@ const ListUsersComponent = () => {
 const [users, setUsers] = useState([]);
 
 useEffect(() => {
- /*  UserService.getAllEmployees().then((response) => {
+   UserService.getAllEmployees().then((response) => {
         setUsers(response.data);
-    }).catch((error) => console.log(error));*/
-    fetchUsers();
+    }).catch((error) => console.log(error));
+    //fetchUsers();
 }, [])
 
-/*const fetchUsers =  () => {
-    /*const URI = 'https://user-information-app.herokuapp.com/users/getAll';
-    const res = await fetch(URI);
-    const data = await res.json();
-    console.log("some data" + JSON.stringify(data))
-    return data; 
-}*/
-
 const fetchUsers = () => {
-    fetch("https://user-information-app.herokuapp.com/users/getAll")
+    const URL = 'https://user-information-app.herokuapp.com/users/getAll';
+    console.log("URI -> ", URL);
+    fetch(URL)
       .then((response) => response.json())
       .then((json) => {
         console.log(json);
