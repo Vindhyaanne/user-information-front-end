@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import UserService from '../services/UserService';
-import axios from "axios";
-
 
 const ListUsersComponent = () => {
 
